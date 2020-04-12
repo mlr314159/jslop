@@ -5,17 +5,17 @@ var numplayers = 4;
 var tokensperplayer = 60;
 var dealer = 2;
 var playernames  = ["Me", "Jack", "Fred", "Joe", "Steve", "Willie"];
-
+//change var's to game object
 //player object
 //players array
 
-var randNumArr=[24, 40, 45, 51, 16, 4, 16, 47, 37, 50, 32, 26, 29, 36, 2, 21, 7, 3, 1, 23, 4, 32, 42, 4, 25, 46, 50, 2, 31, 45, 34, 42, 22, 5, 46, 50, 10, 5, 51, 18, 49, 9, 51, 4, 5, 34, 4, 40, 50, 34, 31, 11, 13, 4, 41, 19, 17, 48, 35, 21, 47, 14, 14, 39, 30, 8, 4, 4, 25, 13, 49, 18, 15, 27, 44, 33, 45, 18, 31, 47, 45, 14, 35, 6, 28, 45, 34, 12, 9, 33, 33, 23, 48, 20, 4, 23, 4, 25, 14, 4, 32, 33, 29, 34, 1, 0, 1, 6, 20, 44, 33, 34, 36, 41, 2, 8, 1, 47, 15, 41, 4 ];
+var randNumArr=[24, 40, 45, 51, 16, 4, 16, 47, 37, 50, 32, 26, 29, 36, 2, 21, 7, 3, 1, 23, 4, 32, 42, 4, 25, 46, 50, 2, 31, 45, 34, 42, 22, 5, 46, 50, 10, 5, 51, 18, 49, 9, 51, 4, 5, 34, 4, 40, 50, 34, 31, 11, 13, 4, 41, 19, 17, 48, 35, 21, 47, 14, 14, 39, 30, 8, 4, 4, 25, 13, 49, 18, 15, 27, 44, 33, 45, 18, 31, 47, 45, 14, 35, 6, 28, 45, 34, 12, 9, 33, 33, 23, 48, 20, 4, 23, 4, 25, 14, 4, 32, 33, 29, 34, 1, 0, 1, 6, 20, 44, 33, 34, 36, 41, 2, 8, 1, 47, 15, 41, 4, 18, 45, 8 ];
 var randNumCount = -1;
 var randRange = -1;
 
 function getRndInteger(x) {
     if (x <= 0) {
-        if (randNumCount >= 120) {
+        if (randNumCount >= 121) {
             randNumCount = -1;
         }
         randNumCount += 1;
@@ -94,7 +94,6 @@ function makecards() {
         }
     }
     console.log ("nd: ",carddeck);
-    console.log ("new deck");
     return "new deck";
 }
 
@@ -133,24 +132,20 @@ function sortcards() {
         sorteddeck[i] = tempcardf;
         sorteddeck[j] = tempcardt;
     }
-    console.log("sd: ",sorteddeck);
-    console.log ("cards sorted");
+    console.log ("sd: ",sorteddeck);
     return "cards sorted";
 }
 
 function showcard(num) {
-    console.log(carddeck[num]);
     return carddeck[num];
 }
 
 
 function showsortedcard(num) {
-    console.log(sorteddeck[num]);
     return sorteddeck[num];
 }
 
 function carddescknotsame(deck1,deck2){
-    console.log("carddescknotsame");
    if(deck1 == deck2){
        return true;
    } else {
@@ -161,13 +156,10 @@ function carddescknotsame(deck1,deck2){
 
 
 function gameloop(number_players, initial_coins) {
-    console.log("Game Started");
     var player = initial_coins;
     while (player > 0) {
         player -= 11;
-        console.log(player);
     }
-    console.log("Game Ended");
     if (number_players === -1 && initial_coins === -1) {
         return " -1 : -1 ";
     }
@@ -179,7 +171,5 @@ var players = 2;
 var player_coins = 9;
 var mc = makecards();
 var sc = sortcards();
-console.log(mc,sc);
-console.log(carddescknotsame(carddeck,sorteddeck));
 
 var gl = gameloop(players, player_coins);

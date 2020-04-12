@@ -41,15 +41,15 @@ describe("gameloop", function () {
 
 
     describe("showsortedcard(0)", function () {
-        it("should return 'd8'", function () {
-            expect(showsortedcard(0)).toBe("d8");
+        it("should return 's7'", function () {
+            expect(showsortedcard(0)).toBe("s7");
         });
     });
 
 
     describe("showsortedcard(51)", function () {
-        it("should return 'd2'", function () {
-            expect(showsortedcard(51)).toBe("d2");
+        it("should return 's9'", function () {
+            expect(showsortedcard(51)).toBe("s9");
         });
     });
 
