@@ -8,6 +8,7 @@ function gameloop(number_players, initial_coins) {
         console.log(player);
     }
     console.log("Game Ended");
+    return "Game Ended";
 }
 
 //run gameloop
