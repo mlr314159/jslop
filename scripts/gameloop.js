@@ -8,13 +8,14 @@ function gameloop(number_players, initial_coins) {
         console.log(player);
     }
     console.log("Game Ended");
+    if (number_players === -1 && initial_coins === -1 ) {
+        return " -1 : -1 ";
+    }
     return "Game Ended";
 }
 
 //run gameloop
-var players = 3; 
-var player_coins = 100;
+var players = 2; 
+var player_coins = 9;
 
 gameloop(players,player_coins);
-
-
