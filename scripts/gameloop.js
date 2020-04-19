@@ -189,5 +189,6 @@ var players = 2;
 var player_coins = 9;
 var mc = makecards();
 var sc = sortcards();
+var dealernum=2
 var ts = tablesetup(numplayers, player_coins);
 var gl = gameloop(numplayers, player_coins);
