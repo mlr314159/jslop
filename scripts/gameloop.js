@@ -1,17 +1,17 @@
 // main game loop for LOP
 var carddeck = [];
 var sorteddeck = [];
-var numplayers = 4;
+var numplayers = 6;
 var tokensperplayer = 60;
 var discardcard = "";
 
 var players = [
-    {playernum: "1", playerName="ME", pot:tokensperplaye, card1="", card2="" , card2="", plusrating ="10", otherrating="20"},
-    {playernum: "2", playerName="Fred", pot:tokensperplaye, card1="", card2="" , card2="", plusrating ="15", otherrating="17"},
-    {playernum: "3", playerName="John", pot:tokensperplaye, card1="", card2="" , card2="", plusrating ="20", otherrating="14"},
-    {playernum: "4", playerName="Robert", pot:tokensperplaye, card1="", card2="" , card2="", plusrating ="25", otherrating="11"},
-    {playernum: "5", playerName="Liz", pot:tokensperplaye, card1="", card2="" , card2="", plusrating ="30", otherrating="18"},
-    {playernum: "6", playerName="Nat", pot:tokensperplaye, card1="", card2="" , card2="", plusrating ="40", otherrating="5"}
+    {playernum: "1", playerName:"ME", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :10, otherrating:"20"},
+    {playernum: "2", playerName:"Fred", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :15, otherrating:"17"},
+    {playernum: "3", playerName:"John", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :20, otherrating:"14"},
+    {playernum: "4", playerName:"Robert", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :25, otherrating:"11"},
+    {playernum: "5", playerName:"Liz", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :30, otherrating:"18"},
+    {playernum: "6", playerName:"Nat", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :40, otherrating:"5"}
 ]
 var dealer = 2;
 var playernames  = ["Me", "Jack", "Fred", "Joe", "Steve", "Willie"];
@@ -165,8 +165,11 @@ function carddescknotsame(deck1,deck2){
 }
 
 function tablesetup(number_players, initial_coins){
-    $(".playerboard").hide;
-  
+    for (var i = 0; i < number_players; i++){
+        var str = "playerboardinv" + (i+1);
+        console.log(str);
+        $("section").removeClass(str);
+    }
     return true;
 }
 
@@ -186,5 +189,5 @@ var players = 2;
 var player_coins = 9;
 var mc = makecards();
 var sc = sortcards();
-var ts = tablesetup();
-var gl = gameloop(players, player_coins);
+var ts = tablesetup(numplayers, player_coins);
+var gl = gameloop(numplayers, player_coins);

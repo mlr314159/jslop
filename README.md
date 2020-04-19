@@ -8,6 +8,7 @@ Game loop (while player has chips)
 	cards(1).  //holecards
 	Betting loop(players folded or matched highest bet)
 		players bet()
+    Discard card
 	cards(2)  //the flop
 	Betting loop(players folded or matched highest bet)
 		players bet()

@@ -1,3 +1,51 @@
+body {
+    background: palegreen;
+}
+
+h1 {
+    color: red;
+    background: yellow;
+    text-align: center;
+}
+
 section {
     border-style: solid;
+    margin-left: 20px;
+    width: 90%;
+    background: paleturquoise;
+    font-weight: 400;
+    margin-bottom: 8px;
+
+}
+
+ .gamecard{
+    width: 90%;
+    margin-bottom: 16px;
+    background-color:peachpuff;
+    font-weight: 500;
+    font-size: larger;
+}
+
+div {
+    padding-left: 20px;
+}
+
+.playerboardinv1{
+    visibility: hidden;
+}
+
+.playerboardinv2{
+    visibility: hidden;
+}
+.playerboardinv3{
+    visibility: hidden;
+}
+.playerboardinv4{
+    visibility: hidden;
+}
+.playerboardinv5{
+    visibility: hidden;
+}
+.playerboardinv6{
+    visibility: hidden;
 }
