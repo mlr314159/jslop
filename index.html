@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>LOP</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+
 </head>
+
 <body>
-    
-    <!-- Load Jasmine Framework -->
+	<section class="gamecard" id="gamemater">
+		<div id="commoncardsd">
+			<p id="commoncardsp">Comunal Cards are  cards are :
+            <spane id="ccard1" class="playingcard">c5</spane> <spane id="ccard2" class="playingcard">c6</spane> <spane id="ccard3" class="playingcard">c5</spane>
+           ---- <spane id="ccard4" class="playingcard">c6</spane> -- <spane id="ccard5" class="playingcard">c5</spane>
+            
+            </p>
+		</div>
+		<div id="commenpotd">
+			<p id="commenpotp">The Pot is:<span id="pottotals">24</span></p>
+		</div>
+	</section>
+
+	<article class="playerboards" id="players">
+		<section class="playerboard playerboard1s" id="player1s">
+        <div id="player2d">
+            <p>Player2 :  cards are : <spane id="p3card1" class="playingcard" >c5</spane> <spane id="p3card2" class="playingcard" >c6</spane> : chips=100 : minimum bid = 2</p>
+        </div>
+		</section>
+		<section class="playerboard playerboard2" id="player2">
+        <div id="player1d">
+            <p>Player2 :  cards are : <spane id="p3card1" class="playingcard" >c5</spane> <spane id="p3card2" class="playingcard" >c6</spane> : chips=100 : minimum bid = 2</p>
+        </div>
+		</section>
+		<section class="playerboard playerboard3" id="player3">
+        <div id="player3d">
+            <p>Player3 : cards are : <spane id="p3card1" class="playingcard" >c5</spane> <spane id="p3card2" class="playingcard" >c6</spane> : chips=100 : minimum bid = 2</p>
+        </div>
+		</section>
+		<section class="playerboard playerboard4" id="player4">
+        <div id="player4d">
+            <p>Player4 :  cards are : <spane id="p3card1" class="playingcard" >c5</spane> <spane id="p3card2" class="playingcard" >c6</spane> : chips=100 : minimum bid = 2</p>
+        </div>
+		</section>
+		<section class="playerboard playerboard5" id="player5">
+        <div id="player5d">
+            <p>Player5 :  cards are : <spane id="p5card1" class="playingcard" >c5</spane> <spane id="p5card2" class="playingcard" >c6</spane> : chips=100 : minimum bid = 2</p>
+        </div>
+		</section>
+		<section class="playerboard playerboard6" id="player6">
+        <div id="player6d">
+            <p>Player6 : cards are : <spane id="p6card1" class="playingcard" >c5</spane> <spane id="p6card2" class="playingcard" >c6</spane> : chips=100 : minimum bid = 2</p>
+        </div>
+		</section>
+	</article>
+
+	<!-- Load Jasmine Framework -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.js"
 		integrity="sha256-PePX8Jc4TIxzzVz0Qe4NsH3OUU8+Y49DBWvYgggNqkY=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine-html.js"
@@ -18,13 +69,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.css"
 		integrity="sha256-YzqdEMEXu1sH1t2Y9tk3XhKhxy1xMWvcA1koZx43k+8=" crossorigin="anonymous" />
 
-    <!-- Load jquery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <!-- Load Scripts -->
+	<!-- Load jquery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js"
+		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<!-- Load Tests -->
 	<script src="spec/gameloopspec.js"></script>
-    <!-- Load Tests -->
-    <script type="text/javascript" src="scripts/gameloop.js"></script>
+	<!-- Load Scripts -->
+	<script type="text/javascript" src="scripts/gameloop.js"></script>
 
 </body>
-</html>
 
+</html>
