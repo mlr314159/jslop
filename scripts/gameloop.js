@@ -9,7 +9,7 @@ let players = [
     {
         playernum: 1, 
         playerName: "ME", 
-        ptokens: 60, 
+        ptokens: tokensperplayer, 
         card1: "", 
         card2: "" ,
         plusrating: 10, 
@@ -18,7 +18,7 @@ let players = [
     {
         playernum: 2,
         playerName:"Fred", 
-        ptokens: 60, 
+        ptokens: tokensperplayer, 
         card1: "", 
         card2: "" , 
         plusrating: 15, 
@@ -27,7 +27,7 @@ let players = [
     {
         playernum: 3, 
         playerName:"John", 
-        ptokens: 60, 
+        ptokens: tokensperplayer, 
         card1: "", 
         card2: "" , 
         plusrating: 20, 
@@ -36,7 +36,7 @@ let players = [
     {
         playernum: 4,
         playerName:"Robert",
-        ptokens: 60,
+        ptokens: tokensperplayer,
         card1: "",
         card2: "",
         plusrating: 25, 
@@ -45,7 +45,7 @@ let players = [
     {
         playernum: 5, 
         playerName: "Liz", 
-        ptokens: 60, 
+        ptokens: tokensperplayer, 
         card1: "", 
         card2: "" ,  
         plusrating:30, 
@@ -54,7 +54,7 @@ let players = [
     {
         playernum: 6, 
         playerName:"Nat", 
-        ptokens:60, 
+        ptokens:tokensperplayer, 
         card1:"", 
         card2:"" , 
         plusrating: 40, 
@@ -218,13 +218,11 @@ function carddescknotsame(deck1,deck2){
 var cardno=0;
 function dealcards1(num){
     for(var i=0; i < numplayers; i++){
-        console.log("c=",carddeck[cardno]);
         players[i].card1=carddeck[cardno];
         cardno += 1;
     }
 
     for( i=0; i < numplayers; i++){
-        console.log("c=",carddeck[cardno]);
         players[i].card2=carddeck[cardno];
         cardno += 1;
     }
@@ -272,3 +270,9 @@ var ts = tablesetup(numplayers, tokensperplayer);
 console.log("ts",ts)
 var gl = gameloop(numplayers, tokensperplayer);
 console.log("gl",gl)
+
+function getplayerCards(pnum) {
+    c1 = players[pnum-1].card1;
+    c1 = players[pnum-1].card2;
+    return (c1,",",c2);
+}

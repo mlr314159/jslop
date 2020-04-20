@@ -53,55 +53,32 @@ describe("gameloop", function () {
         });
     });
 
-    describe("getplayerCard(1,1)", function () {
-        it("should return 's10'", function () {
-            expect(getplayerOneCard(1,1)).toBe("s10");
-        });
-    });
 
-    describe("getplayerCard(1,2)", function () {
-        it("should return 'h2'", function () {
-            expect(getplayerOneCard(1,2)).toBe("h2");
+    describe("getplayerCards(1)", function () {
+        it("should return 's10,h2'", function () {
+            expect(getplayerOneCards(4)).toBe("s10,h2");
         });
     });
     
-    describe("getplayerCard(2,1)", function () {
-        it("should return 's10'", function () {
-            expect(getplayerOneCard(2,1)).toBe("s10");
-        });
-    });
-
-    describe("getplayerCard(2,2)", function () {
-        it("should return 'h2'", function () {
-            expect(getplayerOneCard(2,2)).toBe("h2");
+    describe("getplayerCards(2)", function () {
+        it("should return 's10,h2'", function () {
+            expect(getplayerOneCards(4)).toBe("s10,h2");
         });
     });
     
-    describe("getplayerCard(3,1)", function () {
-        it("should return 's10'", function () {
-            expect(getplayerOneCard(3,1)).toBe("s10");
-        });
-    });
-
-    describe("getplayerCard(3,2)", function () {
-        it("should return 'h2'", function () {
-            expect(getplayerOneCard(3,2)).toBe("h2");
-        });
-    });
-    
-    describe("getplayerCard(4,1)", function () {
-        it("should return 's10'", function () {
-            expect(getplayerOneCard(4,1)).toBe("s10");
-        });
-    });
-
-    describe("getplayerCard(4,2)", function () {
-        it("should return 'h2'", function () {
-            expect(getplayerOneCard(4,2)).toBe("h2");
+    describe("getplayerCards(3)", function () {
+        it("should return 's10,h2'", function () {
+            expect(getplayerOneCards(4)).toBe("s10,h2");
         });
     });
     
 
+    describe("getplayerCards(4)", function () {
+        it("should return 's10,h2'", function () {
+            expect(getplayerOneCards(4)).toBe("s10,h2");
+        });
+    });
+    
 
 
 });
