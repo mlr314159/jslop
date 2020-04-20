@@ -1,20 +1,71 @@
 // main game loop for LOP
 var carddeck = [];
 var sorteddeck = [];
-var numplayers = 6;
-var tokensperplayer = 60;
+const numplayers = 6;
+const tokensperplayer = 60;
 var discardcard = "";
 
-var players = [
-    {playernum: "1", playerName:"ME", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :10, otherrating:"20"},
-    {playernum: "2", playerName:"Fred", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :15, otherrating:"17"},
-    {playernum: "3", playerName:"John", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :20, otherrating:"14"},
-    {playernum: "4", playerName:"Robert", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :25, otherrating:"11"},
-    {playernum: "5", playerName:"Liz", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :30, otherrating:"18"},
-    {playernum: "6", playerName:"Nat", pot:tokensperplayer, card1:"", card2:"" , card2:"", plusrating :40, otherrating:"5"}
-]
-var dealer = 2;
-var playernames  = ["Me", "Jack", "Fred", "Joe", "Steve", "Willie"];
+let players = [
+    {
+        playernum: 1, 
+        playerName: "ME", 
+        ptokens: 60, 
+        card1: "", 
+        card2: "" ,
+        plusrating: 10, 
+        otherrating: 20
+    },
+    {
+        playernum: 2,
+        playerName:"Fred", 
+        ptokens: 60, 
+        card1: "", 
+        card2: "" , 
+        plusrating: 15, 
+        otherrating: 17
+    },
+    {
+        playernum: 3, 
+        playerName:"John", 
+        ptokens: 60, 
+        card1: "", 
+        card2: "" , 
+        plusrating: 20, 
+        otherrating: 14
+    },
+    {
+        playernum: 4,
+        playerName:"Robert",
+        ptokens: 60,
+        card1: "",
+        card2: "",
+        plusrating: 25, 
+        otherrating: 11
+    },
+    {
+        playernum: 5, 
+        playerName: "Liz", 
+        ptokens: 60, 
+        card1: "", 
+        card2: "" ,  
+        plusrating:30, 
+        otherrating: 8
+    },
+    {
+        playernum: 6, 
+        playerName:"Nat", 
+        ptokens:60, 
+        card1:"", 
+        card2:"" , 
+        plusrating: 40, 
+        otherrating: 5
+    }
+];
+
+console.log (players);
+
+var dealernum = 2;
+//var playernames  = ["Me", "Jack", "Fred", "Joe", "Steve", "Willie"];
 //change var's to game object
 //player object
 //players array
@@ -164,31 +215,60 @@ function carddescknotsame(deck1,deck2){
     
 }
 
+var cardno=0;
+function dealcards1(num){
+    for(var i=0; i < numplayers; i++){
+        console.log("c=",carddeck[cardno]);
+        players[i].card1=carddeck[cardno];
+        cardno += 1;
+    }
+
+    for( i=0; i < numplayers; i++){
+        console.log("c=",carddeck[cardno]);
+        players[i].card2=carddeck[cardno];
+        cardno += 1;
+    }
+    console.log("Players Deal - done", players)
+    return "Players Deal - done";
+}
+
+var loopcount1 = 0;
 function tablesetup(number_players, initial_coins){
+    if (loopcount1 > 0){ return true;}
+    loopcount1++; 
     for (var i = 0; i < number_players; i++){
+        players[i].ptokens=tokensperplayer;
         var str = "playerboardinv" + (i+1);
-        console.log(str);
         $("section").removeClass(str);
     }
+    makecards();
+    console.log("table");
     return true;
 }
 
+var loopcount2 = 0;
 function gameloop(number_players, initial_coins) {
-    var player = initial_coins;
-    while (player > 0) {
-        player -= 11;
+    if (loopcount2 > 0){ return true;}
+    loopcount2++;
+    var metokens=players[0].ptokens;
+    while (players[0].ptokens > 0) {
+        cardno = 0;
+        var s1=sortcards(1);
+        var s2=dealcards1(1);
+        
+        players[0].ptokens -= 111;
     }
-    if (number_players === -1 && initial_coins === -1) {
-        return " -1 : -1 ";
-    }
+
+    console.log("Game Ended");
     return "Game Ended";
 }
 
 //run gameloop
-var players = 2;
-var player_coins = 9;
-var mc = makecards();
-var sc = sortcards();
-var dealernum=2
-var ts = tablesetup(numplayers, player_coins);
-var gl = gameloop(numplayers, player_coins);
+//var mc = makecards();
+//var sc = sortcards();
+var dealernum = 2
+var cardno = 0;
+var ts = tablesetup(numplayers, tokensperplayer);
+console.log("ts",ts)
+var gl = gameloop(numplayers, tokensperplayer);
+console.log("gl",gl)

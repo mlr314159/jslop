@@ -1,8 +1,10 @@
 #Lancashire Oldham Poker
+
 (A simple simulation of Texas Hold em Poker)
 
 
 ##Set-up game
+
 Game loop (while player has chips)
 	shuffle()
 	cards(1).  //holecards
@@ -24,7 +26,7 @@ ShowResults()
 	
 Set_up_Game()
 	players = 6
-	cards  = 52  2345678910JQKA -  shcd - array of 52  rearranged randomly.  (2D AS)
+	cards  = 52 -  2345678910JQKA -  shcd - array of 52  rearranged randomly.  (2D AS)
 	each player 100 chips
 	each player has
 		name,
