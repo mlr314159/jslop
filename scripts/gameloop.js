@@ -226,6 +226,11 @@ function dealcards1(num){
         players[i].card2=carddeck[cardno];
         cardno += 1;
     }
+
+    discardcard = carddeck[cardno];
+    cardno += 1;
+
+
     console.log("Players Deal - done", players)
     return "Players Deal - done";
 }
